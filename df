@@ -1,4 +1,8 @@
---[[function GetUi() 
+getgenv().Tvk = true
+getgenv().Chon = true
+
+
+function GetUi() 
     if getgenv().Tvk then
     if game.CoreGui:FindFirstChild("Sea Hub GUI") then
         for a, v in ipairs(game.CoreGui:GetChildren()) do
@@ -8,8 +12,7 @@
         end
     end
 end
-getgenv().Tvk = true
-getgenv().Chon = true--]]
+
 
 local oldcolor = {
     ["Border Color"] = Color3.fromRGB(131, 181, 255),
@@ -5098,6 +5101,8 @@ pcall(function()
 end)
 for k,v in pairs(game:GetService("Workspace")["Invisible Walls"]:GetChildren()) do v:Destroy() end
 for k,v in pairs(game:GetService("Workspace").Territories:GetChildren()) do v:Destroy() end
+for k,v in pairs(game:GetService("Workspace").MonsterBarriers:GetChildren()) do v:Destroy() end
+
 for k,v in pairs(game:GetService("Workspace").Map.OuterInvisWalls:GetChildren()) do v:Destroy() end
 local TvkStatCache = game:GetService("ReplicatedStorage").Events.RetrievePlayerStats:InvokeServer()
 spawn(function() 
@@ -5687,6 +5692,8 @@ local AutoSprout = false
 local times = 0.2
 local Running = true
 local Invisible = false
+local Particles = game.Workspace.Particles
+local Folder2 = Particles.Folder2
 local vu = game:GetService("VirtualUser")
 local x = 0
 local y = 0
